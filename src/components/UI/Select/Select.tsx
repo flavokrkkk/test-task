@@ -9,8 +9,13 @@ interface SelectProps {
 const Select: FC<SelectProps> = ({ options, onChange }) => {
   return (
     <select onChange={onChange}>
-      {options.map(({ value, label, selected }) => (
-        <option selected={selected} key={value} value={value}>
+      {options.map(({ value, label, selected, disabled }) => (
+        <option
+          disabled={disabled}
+          selected={selected}
+          key={value}
+          value={value}
+        >
           {label}
         </option>
       ))}
