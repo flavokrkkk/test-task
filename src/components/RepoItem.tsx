@@ -8,8 +8,9 @@ interface RepoItemProps {
 const RepoItem: FC<RepoItemProps> = ({ repo }) => {
   return (
     <>
-      <h1>{`Repo name: ${repo.name}`}</h1>
-      <h1>{`Count start: ${repo.stargazers_count}`}</h1>
+      <div>{`Repo name: ${repo.name}`}</div>
+      <hr />
+      <div>{`Count start: ${repo.stargazers_count}`}</div>
     </>
   );
 };

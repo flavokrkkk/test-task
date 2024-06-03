@@ -69,10 +69,10 @@ function App() {
         <Input value={inputValue} onChange={handleChangeValue} />
         <Select options={options} onChange={handleSelectChange} />
       </Form>
-      <>
+      <div>
         {selectValue === "user" && user && <UserItem user={user} />}
         {selectValue === "repo" && repo && <RepoItem repo={repo} />}
-      </>
+      </div>
     </>
   );
 }

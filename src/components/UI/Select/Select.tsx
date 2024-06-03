@@ -10,7 +10,7 @@ const Select: FC<SelectProps> = ({ options, onChange }) => {
   return (
     <select onChange={onChange}>
       {options.map(({ value, label, selected }) => (
-        <option key={value} value={value} selected={selected}>
+        <option selected={selected} key={value} value={value}>
           {label}
         </option>
       ))}
