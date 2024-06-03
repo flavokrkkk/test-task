@@ -9,6 +9,7 @@ import Input from "./components/UI/Input/Input";
 import Select from "./components/UI/Select/Select";
 import { options } from "./utils/mockData";
 import { SelectValue } from "./models/SelectValue";
+import { baseUrl } from "./utils/baseUrl";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -35,9 +36,7 @@ function App() {
 
   const handleAsyncUser = async () => {
     try {
-      const { data } = await axios.get<UserData>(
-        `https://api.github.com/users/${inputValue}`
-      );
+      const { data } = await axios.get<UserData>(baseUrl.USER_URL + inputValue);
       const userData: UserData = {
         name: data.name,
         public_repos: data.public_repos,
@@ -50,9 +49,7 @@ function App() {
 
   const handleAsyncRepos = async () => {
     try {
-      const { data } = await axios.get<RepoData>(
-        `https://api.github.com/repos/${inputValue}`
-      );
+      const { data } = await axios.get<RepoData>(baseUrl.REPO_URL + inputValue);
       const repoData: RepoData = {
         name: data.name,
         stargazers_count: data.stargazers_count,
